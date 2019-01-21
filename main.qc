@@ -25,4 +25,5 @@ void() precaches =
  precache_sound ("player/death3.wav");
  precache_sound ("player/death4.wav");
  precache_sound ("player/death5.wav");
+ precache_sound ("player/plyrjmp8.wav"); // player jump
 };

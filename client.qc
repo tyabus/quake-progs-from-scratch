@@ -1,10 +1,23 @@
 void() Chasecam_Update;
 void() ClientKill = {};
-void() ClientConnect = {};
+void() ClientConnect;
 void() ClientDisconnect = {};
-void() PlayerPreThink = {CheckImpulses(); Chasecam_Update(); SetClientFrame (); WaterMove ();};
+void() PlayerPreThink;
 void() PlayerPostThink = {};
 void() PutClientInServer;
+void() PlayerJump;
+
+void() PlayerPreThink =
+{
+ CheckImpulses();
+ Chasecam_Update();
+ SetClientFrame ();
+ WaterMove ();
+ if (self.button2)
+ {
+ PlayerJump ();
+ }
+};
 
 void() PutClientInServer =
 {
@@ -29,4 +42,10 @@ setsize (self, VEC_HULL_MIN, VEC_HULL_MAX); // Set my size
 
 self.view_ofs = '0 0 22'; // Center my view
 self.velocity = '0 0 0'; // Stop any old movement
+};
+
+void() ClientConnect
+{
+ bprint (self.netname);
+ bprint (" entered the game\n");
 };

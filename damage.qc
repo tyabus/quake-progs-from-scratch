@@ -17,8 +17,6 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage = {
     if (!targ.takedamage)
         return;
 
-    //damage_attacker = attacker;
-
     if ( (inflictor != world) && (targ.movetype == MOVETYPE_WALK) )
     {
         dir = targ.origin - (inflictor.absmin + inflictor.absmax) * 0.5;

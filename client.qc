@@ -44,7 +44,7 @@ self.view_ofs = '0 0 22'; // Center my view
 self.velocity = '0 0 0'; // Stop any old movement
 };
 
-void() ClientConnect
+void() ClientConnect =
 {
  bprint (self.netname);
  bprint (" entered the game\n");

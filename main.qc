@@ -1,3 +1,4 @@
+void() InitTrigger;
 void() precaches;
 void() LightStyles_setup; 
 void() main = {};
@@ -26,4 +27,14 @@ void() precaches =
  precache_sound ("player/death4.wav");
  precache_sound ("player/death5.wav");
  precache_sound ("player/plyrjmp8.wav"); // player jump
+};
+void() InitTrigger =
+{
+        //if (self.angles != '0 0 0')
+                //SetMovedir ();
+        self.solid = SOLID_TRIGGER;
+        setmodel (self, self.model); // set size and link into world
+        self.movetype = MOVETYPE_NONE;
+        self.modelindex = 0;
+        self.model = "";
 };

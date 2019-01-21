@@ -23,6 +23,7 @@ vector		trace_endpos;
 vector		trace_plane_normal;
 float		trace_plane_dist;
 entity		trace_ent;
+entity          damage_attacker; // set by T_Damage, DO NOT TOUCH!!
 float		trace_inopen;
 float		trace_inwater;
 

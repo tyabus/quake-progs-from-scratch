@@ -100,7 +100,6 @@ typedef struct
 	float	items;
 	float	takedamage;
 	int	chain;
-	int	damage_attacker;
 	float	pain_finished;
 	float	air_finished;
 	float	dmg;
@@ -145,4 +144,4 @@ typedef struct
 	string_t	noise3;
 } entvars_t;
 
-#define PROGHEADER_CRC 16721
+#define PROGHEADER_CRC 49732

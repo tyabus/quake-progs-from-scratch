@@ -73,7 +73,6 @@ void		end_sys_globals;		// flag for structure dumping
 .float		items;			// bit flags
 .float		takedamage;
 .entity		chain;
-.entity         damage_attacker;
 .float          pain_finished, air_finished, dmg, dmgtime;
 .float		deadflag;
 .vector		view_ofs;			// add to origin to get eye point

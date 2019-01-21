@@ -1,0 +1,14 @@
+// Compile with frikqcc
+progs.dat                                           // Output File
+
+defs.qc                                             // Definitions
+internal.qc                                         // Internal Entitiy Management
+ambient.qc                                          // Ambients
+lights.qc                                           // Light Entities
+chasecam.qc                                         // Chasecam/Thirdperson view
+main.qc                                             // Main subroutines
+impulses.qc                                         // Impulses
+damage.qc                                           // Damage Releated stuff
+player.qc                                           // Player Animations
+client.qc                                           // Client subroutines
+dummys.qc                                           // Null spawn functions

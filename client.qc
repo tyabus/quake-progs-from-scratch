@@ -1,11 +1,10 @@
 void() Chasecam_Update;
 void() ClientKill = {};
 void() ClientConnect;
-void() ClientDisconnect = {};
+void() ClientDisconnect;
 void() PlayerPreThink;
 void() PlayerPostThink = {};
 void() PutClientInServer;
-void() PlayerJump;
 
 void() PlayerPreThink =
 {
@@ -48,4 +47,13 @@ void() ClientConnect =
 {
  bprint (self.netname);
  bprint (" entered the game\n");
+};
+
+void() ClientDisconnect =
+{
+                bprint (PRINT_HIGH, self.netname);
+		bprint (PRINT_HIGH, " left the game with ");
+		bprint (PRINT_HIGH, ftos(self.frags));
+		bprint (PRINT_HIGH, " frags\n");
+	        sound (self, CHAN_BODY, "player/tornoff2.wav", 1, ATTN_NONE);
 };

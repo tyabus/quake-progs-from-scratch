@@ -29,6 +29,7 @@ float		trace_inwater;
 
 entity          msg_entity;                      // destination of single entity writes
 void()          main;                            // only for testing
+void()          PlayerJump
 void()		StartFrame;
 void() 		PlayerPreThink;
 void() 		PlayerPostThink;

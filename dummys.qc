@@ -1,6 +1,5 @@
 // General Junk
 void() event_lightning          = {remove(self);};
-void() misc_fireball            = {remove(self);};
 void() misc_explobox            = {remove(self);};
 void() misc_explobox2           = {remove(self);};
 void() trap_spikeshooter        = {remove(self);};
@@ -9,7 +8,6 @@ void() func_bossgate            = {remove(self);};
 void() func_episodegate         = {remove(self);};
 void() func_illusionary         = {remove(self);};
 void() func_train               = {remove(self);};
-void() func_button              = {remove(self);};
 void() func_door                = {remove(self);};
 void() func_door_secret         = {remove(self);};
 void() func_plat                = {remove(self);};

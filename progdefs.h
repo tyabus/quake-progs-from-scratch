@@ -44,6 +44,7 @@ typedef struct
 	vec3_t	trace_plane_normal;
 	float	trace_plane_dist;
 	int	trace_ent;
+	int	damage_attacker;
 	float	trace_inopen;
 	float	trace_inwater;
 	int	msg_entity;
@@ -144,4 +145,4 @@ typedef struct
 	string_t	noise3;
 } entvars_t;
 
-#define PROGHEADER_CRC 49732
+#define PROGHEADER_CRC 53272

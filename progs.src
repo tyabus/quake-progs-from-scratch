@@ -2,7 +2,8 @@
 progs.dat                                           // Output File
 
 defs.qc                                             // Definitions
-internal.qc                                         // Internal Entitiy Management
+subs.qc                                             // SUB Functions
+internal.qc                                         // Internal Entity Management
 ambient.qc                                          // Ambients
 lights.qc                                           // Light Entities
 chasecam.qc                                         // Chasecam/Thirdperson view
@@ -11,4 +12,5 @@ impulses.qc                                         // Impulses
 damage.qc                                           // Damage Releated stuff
 player.qc                                           // Player Animations
 client.qc                                           // Client subroutines
+misc.qc                                             // Misc Entities
 dummys.qc                                           // Null spawn functions

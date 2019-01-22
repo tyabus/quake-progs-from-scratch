@@ -191,6 +191,14 @@ void(entity e) setspawnparms			= #78;	// set parm1... to the
 float	FALSE					= 0;
 float 	TRUE					= 1;
 
+// for buttons
+.float state;
+// for subs
+.void() think1;
+.vector finaldest, finalangle;
+
+
+
 // edict.flags
 float	FL_FLY					= 1;
 float	FL_SWIM					= 2;
@@ -366,7 +374,8 @@ float	AS_MISSILE		= 4;
 
 void() SUB_Null = {};
 void() SUB_Null2 = {};
-
+void() SUB_UseTargets;
+void() SUB_CalcMoveDone;
 // Quake assumes these are defined.
 entity activator;
 string string_null;    // null string, nothing should be held here

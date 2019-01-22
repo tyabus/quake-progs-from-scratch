@@ -42,21 +42,6 @@ void() SUB_UseTargets =
 	}
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 void(vector tdest, float tspeed, void() func) SUB_CalcMove =
 { 
         local vector vdestdelta;

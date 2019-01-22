@@ -67,3 +67,8 @@ void() LightStyles_setup = { // Setup light animation tables. 'a' is total darkn
                                                      lightstyle(10,"mmamammmmammamamaaamammma");
                                                      lightstyle(11,"abcdefghijklmnopqrrqponmlkjihgfedcba");
 };
+
+void() event_lightning =
+{
+        //self.use = lightning_use;
+};

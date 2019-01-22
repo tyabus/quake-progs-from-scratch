@@ -1,5 +1,4 @@
 // General Junk
-void() event_lightning          = {remove(self);};
 void() misc_explobox            = {remove(self);};
 void() misc_explobox2           = {remove(self);};
 void() trap_spikeshooter        = {remove(self);};

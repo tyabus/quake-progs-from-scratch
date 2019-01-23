@@ -30,6 +30,7 @@ float		trace_inwater;
 entity          msg_entity;                      // destination of single entity writes
 void()          main;                            // only for testing
 void()          PlayerJump; // player jump function
+void()          func_wall_use; // many entities will use this at future
 void()		StartFrame;
 void() 		PlayerPreThink;
 void() 		PlayerPostThink;

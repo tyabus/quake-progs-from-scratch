@@ -117,7 +117,6 @@ void() trigger_multiple =
 	}
 	else if (self.sounds == 2)
 	{
-		precache_sound ("misc/talk.wav");
 		self.noise = "misc/talk.wav";
 	}
 	else if (self.sounds == 3)

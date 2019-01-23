@@ -50,6 +50,7 @@ typedef struct
 	int	msg_entity;
 	func_t	main;
 	func_t	PlayerJump;
+	func_t	func_wall_use;
 	func_t	StartFrame;
 	func_t	PlayerPreThink;
 	func_t	PlayerPostThink;
@@ -148,4 +149,4 @@ typedef struct
 	string_t	noise3;
 } entvars_t;
 
-#define PROGHEADER_CRC 39458
+#define PROGHEADER_CRC 29091

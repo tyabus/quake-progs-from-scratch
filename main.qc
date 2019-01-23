@@ -39,6 +39,11 @@ void() precaches =
  precache_sound ("buttons/switch04.wav");
  precache_sound ("misc/talk.wav"); // talk
  precache_sound ("player/tornoff2.wav"); // disconnect sound
+ precache_sound ("misc/r_tele1.wav"); // teleport
+ precache_sound ("misc/r_tele2.wav");
+ precache_sound ("misc/r_tele3.wav");
+ precache_sound ("misc/r_tele4.wav");
+ precache_sound ("misc/r_tele5.wav");
 };
 void() InitTrigger =
 {

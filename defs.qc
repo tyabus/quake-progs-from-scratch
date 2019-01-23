@@ -46,6 +46,8 @@ void		end_sys_globals;		// flag for structure dumping
 .float		ltime;			// local time for entity
 .float		movetype;
 .float		solid;
+.float          jump_flag;
+.string          deathtype; // for future printing the death messages
 .vector		origin;			// ***
 .vector		oldorigin;		// ***
 .vector		velocity;

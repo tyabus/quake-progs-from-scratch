@@ -29,6 +29,9 @@ void() precaches =
  precache_sound ("player/death3.wav");
  precache_sound ("player/death4.wav");
  precache_sound ("player/death5.wav");
+ precache_sound ("player/land.wav"); // landing
+ precache_sound ("player/land2.wav");
+ precache_sound ("player/h2ojump.wav"); // water jump
  precache_sound ("player/plyrjmp8.wav"); // player jump
  precache_sound ("buttons/airbut1.wav"); // buttons
  precache_sound ("buttons/switch21.wav");

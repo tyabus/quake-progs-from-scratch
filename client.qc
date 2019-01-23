@@ -3,7 +3,7 @@ void() ClientKill = {};
 void() ClientConnect;
 void() ClientDisconnect;
 void() PlayerPreThink;
-void() PlayerPostThink = {};
+void() PlayerPostThink;
 void() PutClientInServer;
 
 void() PlayerPreThink =
@@ -56,4 +56,24 @@ void() ClientDisconnect =
 		bprint (ftos(self.frags));
 		bprint (" frags\n");
 	        sound (self, CHAN_BODY, "player/tornoff2.wav", 1, ATTN_NONE);
+};
+
+void() PlayerPostThink =
+{        
+        if ((self.jump_flag < -300) && (self.flags & FL_ONGROUND) && (self.health > 0))
+        {
+                if (self.watertype == CONTENT_WATER)
+                        sound (self, CHAN_BODY, "player/h2ojump.wav", 1, ATTN_NORM);
+                else if (self.jump_flag < -650)
+                {
+                        T_Damage (self, world, world, 5);
+                        sound (self, CHAN_VOICE, "player/land2.wav", 1, ATTN_NORM);
+                        self.deathtype = "falling";
+                }
+                else
+                        sound (self, CHAN_VOICE, "player/land.wav", 1, ATTN_NORM);
+                self.jump_flag = 0;
+        }
+        if (!(self.flags & FL_ONGROUND))
+                self.jump_flag = self.velocity_z;
 };

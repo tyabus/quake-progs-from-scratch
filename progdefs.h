@@ -69,6 +69,8 @@ typedef struct
 	float	ltime;
 	float	movetype;
 	float	solid;
+	float	jump_flag;
+	string_t	deathtype;
 	vec3_t	origin;
 	vec3_t	oldorigin;
 	vec3_t	velocity;
@@ -146,4 +148,4 @@ typedef struct
 	string_t	noise3;
 } entvars_t;
 
-#define PROGHEADER_CRC 37073
+#define PROGHEADER_CRC 39458

@@ -1,3 +1,114 @@
+void() StartItem =
+{
+        self.nextthink = time + 0.25;
+        self.think = PlaceItem;
+};
+
+void() SUB_regen =
+{
+        self.model = self.mdl; // restore original model
+        self.solid = SOLID_TRIGGER; // allow it to be touched again
+        sound (self, CHAN_VOICE, "items/itembk2.wav", 1, ATTN_NORM); // play respawn sound
+        setorigin (self, self.origin);
+};
+
+void() armor_touch =
+{
+	local   float   type, value, bit;
+
+	if (other.health <= 0)
+		return;
+	if (other.classname != "player")
+		return;
+
+	if (self.classname == "item_armor1")
+	{
+		type = 0.3;
+		value = 100;
+		bit = IT_ARMOR1;
+	}
+	if (self.classname == "item_armor2")
+	{
+		type = 0.6;
+		value = 150;
+		bit = IT_ARMOR2;
+	}
+	if (self.classname == "item_armorInv")
+	{
+		type = 0.8;
+		value = 200;
+		bit = IT_ARMOR3;
+	}
+	if (other.armortype*other.armorvalue >= type*value)
+		return;
+
+	other.armortype = type;
+	other.armorvalue = value;
+	other.items = other.items - (other.items & (IT_ARMOR1 | IT_ARMOR2 | IT_ARMOR3)) + bit;
+
+        self.solid = SOLID_NOT;
+	self.model = string_null;
+	if (deathmatch == 1)
+		self.nextthink = time + 20;
+	self.think = SUB_regen;
+
+        sprint(other, "You got armor\n");
+	sound(other, CHAN_ITEM, "items/armor1.wav", 1, ATTN_NORM);
+	stuffcmd (other, "bf\n");
+
+	activator = other;
+	SUB_UseTargets();
+};
+
+void() item_armorInv =
+{
+        self.touch = armor_touch;
+        precache_model ("progs/armor.mdl");
+        setmodel (self, "progs/armor.mdl");
+        self.skin = 2;
+        setsize (self, '-16 -16 0', '16 16 56');
+        StartItem ();
+};
+
+void() item_armor2 =
+{
+        self.touch = armor_touch;
+        precache_model ("progs/armor.mdl");
+        setmodel (self, "progs/armor.mdl");
+        self.skin = 1;
+        setsize (self, '-16 -16 0', '16 16 56');
+        StartItem ();
+};
+
+void() item_armor1 =
+{
+        self.touch = armor_touch;
+        precache_model ("progs/armor.mdl");
+        setmodel (self, "progs/armor.mdl");
+        self.skin = 0;
+        setsize (self, '-16 -16 0', '16 16 56');
+        StartItem ();
+};
+
+void() PlaceItem =
+{
+        local float oldz;
+        self.mdl = self.model;
+        self.flags = FL_ITEM;
+        self.solid = SOLID_TRIGGER;
+        self.movetype = MOVETYPE_TOSS;
+        self.velocity = '0 0 0';
+        self.origin_z = self.origin_z + 6;
+        oldz = self.origin_z;
+        if (!droptofloor())
+        {
+                dprint ("item fell out of level at ");
+                dprint (vtos(self.origin));
+                dprint ("\n"); remove(self);
+                return;
+	}
+};
+
 void() func_episodegate =
 {
 if (!(serverflags & self.spawnflags))

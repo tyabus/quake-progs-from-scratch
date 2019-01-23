@@ -31,6 +31,7 @@ entity          msg_entity;                      // destination of single entity
 void()          main;                            // only for testing
 void()          PlayerJump; // player jump function
 void()          func_wall_use; // many entities will use this at future
+void()		PlaceItem;
 void()		StartFrame;
 void() 		PlayerPreThink;
 void() 		PlayerPostThink;
@@ -43,6 +44,7 @@ void()		SetChangeParms;			// call to set parms for self so they can
 void		end_sys_globals;		// flag for structure dumping
 
 .float		modelindex;		// *** model index in the precached list
+.float          mdl;
 .vector		absmin, absmax;	// *** origin + mins / maxs
 .float		ltime;			// local time for entity
 .float		movetype;
@@ -70,6 +72,9 @@ void		end_sys_globals;		// flag for structure dumping
 .entity		groundentity;
 .float		health;
 .float		frags;
+float IT_ARMOR1 = 8192;
+float IT_ARMOR2 = 16384;
+float IT_ARMOR3 = 32768;
 .float		weapon;			// one of the IT_SHOTGUN, etc flags
 .string		weaponmodel;
 .float		weaponframe;
@@ -148,8 +153,8 @@ void() traceon					= #29;		// turns statment trace on
 void() traceoff					= #30;
 void(entity e) eprint				= #31;		// prints an entire edict
 float(float yaw, float dist) walkmove		= #32;		// returns TRUE or FALSE
-float(float yaw, float dist) droptofloor	= #34;		// TRUE if landed on floor
-void(float style, string value) lightstyle	= #35;
+float() droptofloor	                        = #34;		// TRUE if landed on floor
+void(float style, string value) lightstyle	= #35;  
 float(float v) rint				= #36;		// round to nearest int
 float(float v) floor				= #37;		// largest integer <= v
 float(float v) ceil				= #38;		// smallest integer >= v

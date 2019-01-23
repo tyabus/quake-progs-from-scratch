@@ -51,6 +51,7 @@ typedef struct
 	func_t	main;
 	func_t	PlayerJump;
 	func_t	func_wall_use;
+	func_t	PlaceItem;
 	func_t	StartFrame;
 	func_t	PlayerPreThink;
 	func_t	PlayerPostThink;
@@ -65,6 +66,7 @@ typedef struct
 typedef struct
 {
 	float	modelindex;
+	float	mdl;
 	vec3_t	absmin;
 	vec3_t	absmax;
 	float	ltime;
@@ -149,4 +151,4 @@ typedef struct
 	string_t	noise3;
 } entvars_t;
 
-#define PROGHEADER_CRC 29091
+#define PROGHEADER_CRC 43255

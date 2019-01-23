@@ -49,9 +49,9 @@ void() monster_oldone           = {remove(self);};
 
 void() item_health              = {remove(self);};
 void() item_megahealth_rot      = {remove(self);};
-void() item_armor1              = {remove(self);};
-void() item_armor2              = {remove(self);};
-void() item_armorInv            = {remove(self);};
+//void() item_armor1              = {remove(self);};
+//void() item_armor2              = {remove(self);};
+//void() item_armorInv            = {remove(self);};
 void() item_shells              = {remove(self);};
 void() item_spikes              = {remove(self);};
 void() item_rockets             = {remove(self);};

@@ -194,11 +194,13 @@ float 	TRUE					= 1;
 
 // for buttons
 .float state;
+.float height;
+
 // for subs
 .void() think1;
 .vector finaldest, finalangle;
-
-
+// for triggers
+.float count;
 
 // edict.flags
 float	FL_FLY					= 1;
@@ -363,7 +365,7 @@ float	EF_DIMLIGHT 	= 8;
 
 
 // messages
-float	MSG_BROADCAST	= 0;		// unreliable to all
+float	MSG_BROADCAST	= 0;		        // unreliable to all
 float	MSG_ONE			= 1;		// reliable to one (msg_entity)
 float	MSG_ALL			= 2;		// reliable to all
 float	MSG_INIT		= 3;		// write to the init string

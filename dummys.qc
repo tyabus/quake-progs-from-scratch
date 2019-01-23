@@ -13,22 +13,10 @@ void() func_plat                = {remove(self);};
 void() func_wall                = {remove(self);};
 void() info_intermission        = {remove(self);};
 void() info_null                = {remove(self);};
-void() info_teleport_destination= {remove(self);};
 void() path_corner              = {remove(self);};
 
 // Triggers
-void() trigger_relay            = {remove(self);};
-void() trigger_multiple         = {remove(self);};
-void() trigger_once             = {remove(self);};
 void() trigger_changelevel      = {remove(self);};
-void() trigger_counter          = {remove(self);};
-void() trigger_teleport         = {remove(self);};
-void() trigger_secret           = {remove(self);};
-void() trigger_setskill         = {remove(self);};
-void() trigger_monsterjump      = {remove(self);};
-void() trigger_onlyregistered   = {remove(self);};
-void() trigger_push             = {remove(self);};
-void() trigger_hurt             = {remove(self);};
 
 // Player Starts
 void() info_player_start        = {};

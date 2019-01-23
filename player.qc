@@ -215,19 +215,18 @@ void() DeathSound =
 void() PlayerJump =
 {
 	local vector start, end;
+
 	if (self.flags & FL_WATERJUMP)
 		return;
-	
+
 	if (self.waterlevel >= 2)
 	{
         return;
 	}
 	if (!(self.flags & FL_ONGROUND))
 		return;
-	if ( !(self.flags & FL_JUMPRELEASED) )
-		return;
-	self.flags = self.flags - (self.flags & FL_JUMPRELEASED);
-	//self.button2 = 0;
+
+	self.button2 = 0;
         self.noise = "player/plyrjmp8.wav";
 	sound (self, CHAN_BODY, self.noise, 1, ATTN_NONE);
         self.velocity_z = self.velocity_z + 270;

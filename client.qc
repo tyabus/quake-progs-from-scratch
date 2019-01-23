@@ -51,9 +51,9 @@ void() ClientConnect =
 
 void() ClientDisconnect =
 {
-                bprint (PRINT_HIGH, self.netname);
-		bprint (PRINT_HIGH, " left the game with ");
-		bprint (PRINT_HIGH, ftos(self.frags));
-		bprint (PRINT_HIGH, " frags\n");
+                bprint (self.netname);
+		bprint (" left the game with ");
+		bprint (ftos(self.frags));
+		bprint (" frags\n");
 	        sound (self, CHAN_BODY, "player/tornoff2.wav", 1, ATTN_NONE);
 };

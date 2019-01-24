@@ -42,9 +42,10 @@ void()		ClientDisconnect;
 void()		SetNewParms;			// called when a client first connects to
 void()		SetChangeParms;			// call to set parms for self so they can
 void		end_sys_globals;		// flag for structure dumping
-
+.float          t_length, t_width;
 .float		modelindex;		// *** model index in the precached list
-.float          mdl;
+.float          cnt;                    // misc flag
+.string          mdl;
 .vector		absmin, absmax;	// *** origin + mins / maxs
 .float		ltime;			// local time for entity
 .float		movetype;

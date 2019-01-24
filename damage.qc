@@ -14,6 +14,8 @@ void(entity targ, entity attacker) Killed =
 void(entity targ, entity inflictor, entity attacker, float damage) T_Damage = {
     local	vector	dir;
     local	entity	oldself;
+    local       float   save;
+    local       float   take;
     if (!targ.takedamage)
         return;
 
@@ -25,6 +27,17 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage = {
         dir = normalize(dir);
         targ.velocity = targ.velocity + dir*damage*8;
     }
+        save = ceil(targ.armortype*damage);
+        if (save >= targ.armorvalue)
+        {
+                save = targ.armorvalue;
+                targ.armortype = 0; // lost all armor
+                targ.items = targ.items - (targ.items & (IT_ARMOR1 | IT_ARMOR2 | IT_ARMOR3));
+        }
+
+        targ.armorvalue = targ.armorvalue - save;
+        take = ceil(damage-save);
+
 // check for godmode
     if (targ.flags & FL_GODMODE)
         return; // add to the damage total for clients, which will be sent as a single // message at the end of the frame

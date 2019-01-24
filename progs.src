@@ -1,3 +1,4 @@
+
 // Compile with frikqcc
 progs.dat                                           // Output File
 
@@ -13,5 +14,6 @@ damage.qc                                           // Damage Releated stuff
 player.qc                                           // Player Animations
 client.qc                                           // Client subroutines
 misc.qc                                             // Misc Entities
+plats.qc                                            // Plats Entities
 triggers.qc                                         // Triggers
 dummys.qc                                           // Null spawn functions

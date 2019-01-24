@@ -65,8 +65,11 @@ typedef struct
 
 typedef struct
 {
+	float	t_length;
+	float	t_width;
 	float	modelindex;
-	float	mdl;
+	float	cnt;
+	string_t	mdl;
 	vec3_t	absmin;
 	vec3_t	absmax;
 	float	ltime;
@@ -151,4 +154,4 @@ typedef struct
 	string_t	noise3;
 } entvars_t;
 
-#define PROGHEADER_CRC 43255
+#define PROGHEADER_CRC 39418

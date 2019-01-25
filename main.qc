@@ -45,6 +45,7 @@ void() precaches =
  precache_sound ("misc/r_tele4.wav");
  precache_sound ("misc/r_tele5.wav");
  precache_sound ("items/armor1.wav"); // armor pickup
+ precache_sound ("items/itembk2.wav");
 };
 void() InitTrigger =
 {

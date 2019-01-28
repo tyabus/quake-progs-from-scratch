@@ -4,7 +4,43 @@ void() ClientConnect;
 void() ClientDisconnect;
 void() PlayerPreThink;
 void() PlayerPostThink;
+void() PlayerDeathThink;
+void() respawn;
 void() PutClientInServer;
+
+void() PlayerDeathThink =
+{
+        if (self.deadflag == DEAD_DEAD)
+        {
+                if (self.button2 || self.button1 || self.button0)
+                        return;
+                self.deadflag = DEAD_RESPAWNABLE;
+                return;
+        }
+        if (!self.button2 && !self.button1 && !self.button0)
+                return;
+        self.button0 = 0;
+        self.button1 = 0;
+        self.button2 = 0;
+        respawn();
+        self.deadflag = 0; // bug fix
+};
+
+void() respawn =
+{
+ if (!self.deadflag == DEAD_RESPAWNABLE)
+ {
+ return;
+ }
+ if (coop || deathmatch)
+ {
+ PutClientInServer();
+ } 
+ else
+ {
+ localcmd ("restart\n");
+ }
+};
 
 void() PlayerPreThink =
 {
@@ -12,6 +48,15 @@ void() PlayerPreThink =
  Chasecam_Update();
  SetClientFrame ();
  WaterMove ();
+ if (self.deadflag >= DEAD_DEAD)
+ {
+ PlayerDeathThink ();
+ return;
+ }
+
+ if (self.deadflag == DEAD_DYING)
+ return; // dying so do nothing
+
  if (self.button2)
  {
  PlayerJump ();

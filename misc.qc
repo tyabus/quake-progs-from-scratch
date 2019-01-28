@@ -202,7 +202,7 @@ void() fireball_fly =
         fireball = spawn();
         fireball.solid = SOLID_TRIGGER;
         fireball.movetype = MOVETYPE_TOSS;
-        fireball.velocity = '0 0 900';
+        fireball.velocity = '0 0 1000';
         fireball.velocity_x = (random() * 100) - 50;
         fireball.velocity_y = (random() * 100) - 50;
         fireball.velocity_z = self.speed + (random() * 210);
@@ -223,7 +223,7 @@ void() misc_fireball =
         self.nextthink = time + (random() * 6);
         self.think = fireball_fly;
         if (!self.speed)
-        self.speed = 900;
+        self.speed = 1000;
 };
 
 void() func_button =

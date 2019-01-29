@@ -1,4 +1,4 @@
-error.log
-progs.dat
-files.dat # old qcc
+*.log
+*.dat
 *.save
+*.lno

@@ -11,7 +11,6 @@ void() StartFrame = {};
 void() precaches =
 {
  precache_model ("progs/player.mdl");
- precache_model ("progs/lavaball.mdl");
  precache_model ("progs/s_bubble.spr");
  precache_sound ("player/drown1.wav"); // drowning pain
  precache_sound ("player/drown2.wav"); // drowning pain

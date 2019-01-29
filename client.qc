@@ -1,5 +1,5 @@
 void() Chasecam_Update;
-void() ClientKill = {};
+void() ClientKill;
 void() ClientConnect;
 void() ClientDisconnect;
 void() PlayerPreThink;
@@ -7,6 +7,28 @@ void() PlayerPostThink;
 void() PlayerDeathThink;
 void() respawn;
 void() PutClientInServer;
+
+void() ClientKill =
+{
+ bprint (self.netname);
+ bprint (" suicides\n");
+ self.frags = self.frags - 2;
+ respawn();
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void() PlayerDeathThink =
 {
@@ -28,10 +50,6 @@ void() PlayerDeathThink =
 
 void() respawn =
 {
- if (!self.deadflag == DEAD_RESPAWNABLE)
- {
- return;
- }
  if (coop || deathmatch)
  {
  PutClientInServer();

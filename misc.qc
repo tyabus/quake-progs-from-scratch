@@ -220,6 +220,7 @@ void() fireball_fly =
 void() misc_fireball =
 {
         self.classname = "fireball";
+        precache_model ("progs/lavaball.mdl");
         self.nextthink = time + (random() * 6);
         self.think = fireball_fly;
         if (!self.speed)

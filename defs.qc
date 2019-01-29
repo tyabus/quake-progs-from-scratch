@@ -23,7 +23,6 @@ vector		trace_endpos;
 vector		trace_plane_normal;
 float		trace_plane_dist;
 entity		trace_ent;
-entity          damage_attacker; // set by T_Damage, DO NOT TOUCH!!
 float		trace_inopen;
 float		trace_inwater;
 
@@ -42,16 +41,12 @@ void()		ClientDisconnect;
 void()		SetNewParms;			// called when a client first connects to
 void()		SetChangeParms;			// call to set parms for self so they can
 void		end_sys_globals;		// flag for structure dumping
-.float          t_length, t_width;
+
 .float		modelindex;		// *** model index in the precached list
-.float          cnt;                    // misc flag
-.string         mdl;
 .vector		absmin, absmax;	// *** origin + mins / maxs
 .float		ltime;			// local time for entity
 .float		movetype;
 .float		solid;
-.float          jump_flag;
-.string          deathtype; // for future printing the death messages
 .vector		origin;			// ***
 .vector		oldorigin;		// ***
 .vector		velocity;
@@ -73,9 +68,6 @@ void		end_sys_globals;		// flag for structure dumping
 .entity		groundentity;
 .float		health;
 .float		frags;
-float		IT_ARMOR1 = 8192;
-float		IT_ARMOR2 = 16384;
-float		IT_ARMOR3 = 32768;
 .float		weapon;			// one of the IT_SHOTGUN, etc flags
 .string		weaponmodel;
 .float		weaponframe;
@@ -84,7 +76,6 @@ float		IT_ARMOR3 = 32768;
 .float		items;			// bit flags
 .float		takedamage;
 .entity		chain;
-.float          pain_finished, air_finished, dmg, dmgtime;
 .float		deadflag;
 .vector		view_ofs;			// add to origin to get eye point
 .float		button0;		// fire
@@ -194,6 +185,15 @@ string(string s) precache_sound2		= #76;	// registered version only
 string(string s) precache_file2			= #77;	// registered version only
 void(entity e) setspawnparms			= #78;	// set parm1... to the
 
+entity          damage_attacker; // set by T_Damage, DO NOT TOUCH!!
+.float          t_length, t_width;
+.float          pain_finished, air_finished, dmg, dmgtime;
+float IT_ARMOR1 = 8192;
+float IT_ARMOR2 = 16384;
+float IT_ARMOR3 = 32768;
+
+.float 		jump_flag;
+.string         deathtype; // for future printing the death messages
 //
 // constants
 //
@@ -205,6 +205,8 @@ float 	TRUE					= 1;
 .float state;
 .float height;
 
+.float cnt; // misc flag
+.string         mdl;
 // for subs
 .void() think1;
 .vector finaldest, finalangle;

@@ -1,6 +1,4 @@
-
-entity stemp, otemp, s, old;
-
+entity stemp, otemp, s, old; // unused
 
 void() trigger_reactivate =
 {

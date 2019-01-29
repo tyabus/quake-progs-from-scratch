@@ -44,7 +44,6 @@ typedef struct
 	vec3_t	trace_plane_normal;
 	float	trace_plane_dist;
 	int	trace_ent;
-	int	damage_attacker;
 	float	trace_inopen;
 	float	trace_inwater;
 	int	msg_entity;
@@ -65,18 +64,12 @@ typedef struct
 
 typedef struct
 {
-	float	t_length;
-	float	t_width;
 	float	modelindex;
-	float	cnt;
-	string_t	mdl;
 	vec3_t	absmin;
 	vec3_t	absmax;
 	float	ltime;
 	float	movetype;
 	float	solid;
-	float	jump_flag;
-	string_t	deathtype;
 	vec3_t	origin;
 	vec3_t	oldorigin;
 	vec3_t	velocity;
@@ -110,10 +103,6 @@ typedef struct
 	float	items;
 	float	takedamage;
 	int	chain;
-	float	pain_finished;
-	float	air_finished;
-	float	dmg;
-	float	dmgtime;
 	float	deadflag;
 	vec3_t	view_ofs;
 	float	button0;
@@ -154,4 +143,4 @@ typedef struct
 	string_t	noise3;
 } entvars_t;
 
-#define PROGHEADER_CRC 39418
+#define PROGHEADER_CRC 36251

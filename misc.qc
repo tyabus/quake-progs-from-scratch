@@ -229,7 +229,7 @@ void() misc_fireball =
 
 void() func_button =
 {
-        local float temp1, temp2;
+        //local float temp1, temp2;
         if (self.sounds == 0)
         {
                 self.noise = "buttons/airbut1.wav";

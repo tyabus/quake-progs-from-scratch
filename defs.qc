@@ -33,11 +33,11 @@ void()          PlayerJump; // player jump function
 void()          func_wall_use; // many entities will use this at future
 void()		PlaceItem;
 void()		StartFrame;
-void() 		PlayerPreThink;
-void() 		PlayerPostThink;
+void()		PlayerPreThink;
+void()		PlayerPostThink;
 void()		ClientKill;
 void()		ClientConnect;
-void() 		PutClientInServer;		// call after setting the parm1... parms
+void()		PutClientInServer;		// call after setting the parm1... parms
 void()		ClientDisconnect;
 void()		SetNewParms;			// called when a client first connects to
 void()		SetChangeParms;			// call to set parms for self so they can
@@ -45,7 +45,7 @@ void		end_sys_globals;		// flag for structure dumping
 .float          t_length, t_width;
 .float		modelindex;		// *** model index in the precached list
 .float          cnt;                    // misc flag
-.string          mdl;
+.string         mdl;
 .vector		absmin, absmax;	// *** origin + mins / maxs
 .float		ltime;			// local time for entity
 .float		movetype;
@@ -73,9 +73,9 @@ void		end_sys_globals;		// flag for structure dumping
 .entity		groundentity;
 .float		health;
 .float		frags;
-float IT_ARMOR1 = 8192;
-float IT_ARMOR2 = 16384;
-float IT_ARMOR3 = 32768;
+float		IT_ARMOR1 = 8192;
+float		IT_ARMOR2 = 16384;
+float		IT_ARMOR3 = 32768;
 .float		weapon;			// one of the IT_SHOTGUN, etc flags
 .string		weaponmodel;
 .float		weaponframe;
@@ -95,7 +95,7 @@ float IT_ARMOR3 = 32768;
 .vector		v_angle;		// view / targeting angle for players
 .float		idealpitch;		// calculated pitch angle for lookup up slopes
 .string		netname;
-.entity 	enemy;
+.entity		enemy;
 .float		flags;
 .float		colormap;
 .float		team;
@@ -108,7 +108,7 @@ float IT_ARMOR3 = 32768;
 .float		ideal_yaw;
 .float		yaw_speed;
 .entity		aiment;
-.entity 	goalentity;		// a movetarget or an enemy
+.entity		goalentity;		// a movetarget or an enemy
 .float		spawnflags;
 .string		target;
 .string		targetname;
@@ -402,4 +402,3 @@ void(string s) bprint				= #23;
 void(entity client, string s) sprint		= #24;
 void() SUB_Remove = {remove(self);};
 // End
-

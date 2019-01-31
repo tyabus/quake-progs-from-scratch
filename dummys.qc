@@ -4,7 +4,6 @@ void() misc_explobox2           = {remove(self);};
 void() trap_spikeshooter        = {remove(self);};
 void() trap_shooter             = {remove(self);};
 void() func_bossgate            = {remove(self);};
-void() func_illusionary         = {remove(self);};
 void() func_door                = {remove(self);};
 void() func_door_secret         = {remove(self);};
 void() info_intermission        = {remove(self);};
@@ -57,3 +56,4 @@ void() item_artifact_invulnerability = {remove(self);};
 void() item_artifact_envirosuit = {remove(self);};
 void() item_artifact_invisibility = {remove(self);};
 void() item_artifact_super_damage = {remove(self);};
+

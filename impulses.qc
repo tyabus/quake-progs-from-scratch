@@ -1,5 +1,13 @@
+void() TestDamage =
+{
+T_Damage (self, self, self, -1);
+T_Damage (self, self, self, -1);
+T_Damage (self, self, self, -1);
+};
+
 void() CheckImpulses =
 {
 if (self.impulse == 100) {ChaseCam_Toggle();} // If Impulse 100, toggle cam
+if (self.impulse == 255) {TestDamage();}
 self.impulse = 0; // Clear impulse list
 };

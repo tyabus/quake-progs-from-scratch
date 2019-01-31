@@ -1,3 +1,12 @@
+void() func_illusionary =
+{
+	self.angles = '0 0 0';
+        self.movetype = MOVETYPE_NONE;
+        self.solid = SOLID_NOT;
+        setmodel (self, self.model);
+        makestatic (self);
+};
+
 void() StartItem =
 {
         self.nextthink = time + 0.25;
@@ -229,7 +238,7 @@ void() misc_fireball =
 
 void() func_button =
 {
-        //local float temp1, temp2;
+        local float gtemp, ftemp;
         if (self.sounds == 0)
         {
                 self.noise = "buttons/airbut1.wav";

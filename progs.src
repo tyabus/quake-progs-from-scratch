@@ -9,8 +9,8 @@ ambient.qc                                          // Ambients
 lights.qc                                           // Light Entities
 chasecam.qc                                         // Chasecam/Thirdperson view
 main.qc                                             // Main subroutines
+damage.qc					    // Damage Releated Stuff
 impulses.qc                                         // Impulses
-damage.qc                                           // Damage Releated stuff
 player.qc                                           // Player Animations
 client.qc                                           // Client subroutines
 misc.qc                                             // Misc Entities
